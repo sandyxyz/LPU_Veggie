@@ -3,11 +3,11 @@
 An Android application for browsing and purchasing products from LPU Veggie, with features like login via OTP, product display, cart management, and Firebase integration.
 
 # Features:
-OTP Login: Firebase-based authentication for user login using OTP.
-Product Details: View detailed information on products, including images, price, and description.
-Cart: Add, remove, and manage products in the cart.
-Room Database: Local storage for cart data and product information.
-Firebase Services: Real-time data sync, authentication, and storage.
++ OTP Login: Firebase-based authentication for user login using OTP.
++ Product Details: View detailed information on products, including images, price, and description.
++ Cart: Add, remove, and manage products in the cart.
++ Room Database: Local storage for cart data and product information.
++ Firebase Services: Real-time data sync, authentication, and storage.
 
 # Key Components:
 Activity: Different screens like Login, Product Details, and Cart.
