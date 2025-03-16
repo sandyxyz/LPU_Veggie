@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Activities.ProductDetailsActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/networklayout"
+        android:elevation="25dp"
+        android:visibility="gone"
+
+
+        >
+        <include
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            layout="@layout/netwrok_connectivity_layout"
+
+            />
+    </LinearLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/colorPrimaryHighlight"
+        android:layout_height="60dp">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/baseline_arrow_back_24"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="16dp"/>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tomato"
+            android:textSize="18sp"
+            android:fontFamily="@font/poppins"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/back"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:textColor="@color/white"/>
+
+        <ImageView
+            android:id="@+id/cart"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/baseline_shopping_cart_24"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="16dp"/>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cartsizeConteiner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/red_circluar_bg"
+            android:gravity="center"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@id/cart"
+            app:layout_constraintBottom_toBottomOf="@id/cart"
+            app:layout_constraintEnd_toEndOf="@id/cart"
+            app:layout_constraintTop_toTopOf="@id/cart"
+            android:layout_marginBottom="24dp"
+            >
+
+
+            <TextView
+                android:id="@+id/cartSizetv"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:fontFamily="@font/helvetice_bold"
+                android:text="11"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/search"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/baseline_search_24"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/cart"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="16dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topBar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+          <LinearLayout
+              android:id="@+id/imageContainer"
+              android:layout_width="match_parent"
+              android:orientation="vertical"
+              app:layout_constraintTop_toTopOf="parent"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintEnd_toEndOf="parent"
+              android:layout_height="350dp">
+              <androidx.viewpager2.widget.ViewPager2
+                  android:id="@+id/productimageDetail"
+                  android:layout_width="match_parent"
+                  android:layout_height="350dp"
+                  app:layout_constraintTop_toTopOf="parent"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintEnd_toEndOf="parent">
+              </androidx.viewpager2.widget.ViewPager2>
+          </LinearLayout>
+
+
+            <it.xabaras.android.viewpagerindicator.widget.ViewPagerIndicator2
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:id="@+id/viewpagerIndicator"
+                app:itemRadius="3dp"
+                app:layout_constraintTop_toBottomOf="@id/imageContainer"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="0dp"
+                android:padding="8dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/poppins"
+                android:maxLines="2"
+                android:text="Potato "
+                android:textColor="@color/black"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageContainer" />
+
+            <TextView
+                android:id="@+id/gram"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:paddingStart="8dp"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/poppins"
+                android:text="100gm"
+                android:textColor="#858585"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/name" />
+
+            <TextView
+                android:id="@+id/rupeeSign"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/poppins"
+                android:text="₹"
+                app:layout_constraintTop_toBottomOf="@+id/gram"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/black"
+                android:layout_marginStart="8dp"
+
+                android:textSize="14sp" />
+            <TextView
+                android:id="@+id/price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/poppins"
+                android:text="25"
+                app:layout_constraintTop_toTopOf="@+id/rupeeSign"
+                app:layout_constraintStart_toEndOf="@+id/rupeeSign"
+                android:layout_marginStart="3dp"
+                android:textColor="@color/black"
+                android:textSize="19sp" />
+            <TextView
+                android:id="@+id/oPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/poppins"
+                android:text="₹27"
+                app:layout_constraintTop_toTopOf="@+id/rupeeSign"
+                android:layout_marginStart="6dp"
+                app:layout_constraintStart_toEndOf="@+id/price"
+                android:textColor="#757575"
+                android:textSize="17sp" />
+            <View
+                android:id="@+id/view"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                app:layout_constraintStart_toStartOf="@+id/oPrice"
+                app:layout_constraintEnd_toEndOf="@+id/oPrice"
+                android:background="#757575"
+                app:layout_constraintTop_toTopOf="@+id/oPrice"
+                app:layout_constraintBottom_toBottomOf="@+id/oPrice"/>
+
+            <LinearLayout
+                android:id="@+id/off"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/price"
+                app:layout_constraintStart_toStartOf="parent"
+                android:background="@color/colorPrimaryLight"
+                android:padding="6dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:id="@+id/offPercent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:text="10% OFF"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+            <TextView
+                android:id="@+id/time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:text="Delievery In 5 hours"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/black"
+                app:layout_constraintTop_toBottomOf="@+id/off"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="8dp"
+                android:textSize="12sp" />
+            <TextView
+                android:id="@+id/amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:text="Choose the quantity:-"
+                app:layout_goneMarginTop="116dp"
+                android:layout_marginTop="8dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                app:layout_constraintTop_toBottomOf="@+id/time"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="8dp"
+                android:textSize="14sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/sizeRv"
+                android:layout_width="match_parent"
+                app:layout_constraintTop_toBottomOf="@id/amount"
+                android:layout_height="80dp"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp"
+                android:paddingStart="6dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/line"
+                tools:listitem="@layout/size_layout"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+
+            <View
+                android:id="@+id/line"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:background="#AAAAAA"
+                app:layout_constraintTop_toBottomOf="@id/sizeRv"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+              />
+
+            <TextView
+                android:id="@+id/desctitle"
+                android:layout_width="0dp"
+                android:padding="8dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Description"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/line" />
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:padding="8dp"
+                android:text="Motivated Software Developer skilled in Android (Kotlin), web frontend, and C++. Successful track record of creating inventive solutions, working well with diverse teams. Proficient in crafting user-friendly Android apps and ensuring smooth integration. Dedicated to continuous
+                 learning and keeping up with tech advancements."
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/desctitle" />
+
+
+            <com.github.leandroborgesferreira.loadingbutton.customViews.CircularProgressButton
+                android:id="@+id/btnAddtoCart"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                style="@style/blueButtonStyle"
+                app:spinning_bar_color="@color/white"
+                app:layout_constraintTop_toBottomOf="@+id/description"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="18dp"
+                android:text="Add to Cart"
+                android:layout_marginHorizontal="12dp"
+                android:textStyle="bold"
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

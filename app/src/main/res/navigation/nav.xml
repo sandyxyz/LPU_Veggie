@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav"
+    app:startDestination="@id/mainHome">
+
+    <activity
+        android:id="@+id/productDetailsActivity"
+        android:name="com.filangladminlpuveggi.lpuveggii.Activities.ProductDetailsActivity"
+        android:label="activity_product_details"
+        tools:layout="@layout/activity_product_details" >
+        <argument
+            android:name="product"
+            app:argType="com.filangladminlpuveggi.lpuveggii.modelClass.products" />
+    </activity>
+    <navigation android:id="@+id/navigation"
+        app:startDestination="@id/mainHome">
+        <activity
+            android:id="@+id/mainHome"
+            android:name="com.filangladminlpuveggi.lpuveggii.Activities.MainHome"
+            android:label="activity_main"
+            tools:layout="@layout/activity_main" />
+        <action
+            android:id="@+id/action_global_productDetailsActivity"
+            app:destination="@id/productDetailsActivity" />
+    </navigation>
+    <activity
+        android:id="@+id/allOrderDetails"
+        android:name="com.filangladminlpuveggi.lpuveggii.Activities.AllOrderDetails"
+        android:label="activity_all_order_details"
+        tools:layout="@layout/activity_all_order_details" >
+        <argument
+            android:name="order"
+            app:argType="com.filangladminlpuveggi.lpuveggii.Orders.Order" />
+    </activity>
+    <navigation android:id="@+id/navigation2"
+        app:startDestination="@id/allOrders2">
+        <activity
+            android:id="@+id/allOrders2"
+            android:name="com.filangladminlpuveggi.lpuveggii.Activities.AllOrders"
+            android:label="activity_all_orders"
+            tools:layout="@layout/activity_all_orders" />
+        <action
+            android:id="@+id/action_global_allOrderDetails"
+            app:destination="@id/allOrderDetails" />
+    </navigation>
+</navigation>

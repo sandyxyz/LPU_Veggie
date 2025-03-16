@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Activities.AllOrderDetails">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/colorPrimaryHighlight"
+        android:layout_height="60dp">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/baseline_arrow_back_24"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="16dp"/>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Order Details"
+            android:textSize="14sp"
+            android:fontFamily="@font/poppins"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/back"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:textColor="@color/white"/>
+
+        <ImageView
+            android:id="@+id/cart"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/baseline_shopping_cart_24"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="16dp"/>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cartsizeConteiner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/red_circluar_bg"
+            android:gravity="center"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@id/cart"
+            app:layout_constraintBottom_toBottomOf="@id/cart"
+            app:layout_constraintEnd_toEndOf="@id/cart"
+            app:layout_constraintTop_toTopOf="@id/cart"
+            android:layout_marginBottom="24dp"
+            >
+
+
+            <TextView
+                android:id="@+id/cartSizetv"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:fontFamily="@font/helvetice_bold"
+                android:text="11"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/search"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/baseline_search_24"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/cart"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="16dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/scrollview"
+        android:scrollbars="none"
+        app:layout_constraintTop_toBottomOf="@id/topBar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ProgressBar
+                android:id="@+id/progresBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminateTint="@color/colorPrimaryLight"
+                android:layout_gravity="center"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:elevation="14dp"
+                android:visibility="gone"
+
+                />
+
+            <TextView
+                android:id="@+id/orderiD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:text="OrderId"
+                android:textColor="#343333"
+                android:textSize="12sp"
+                android:textAlignment="center"
+                android:padding="12dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <View
+                android:id="@+id/line"
+                android:layout_width="0dp"
+                android:layout_height="1.5dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/orderiD"
+                android:background="#B5B5B5"/>
+
+
+            <TextView
+                android:id="@+id/basketTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:text="Basket (8 Item)"
+                android:textColor="#343333"
+                android:textSize="16sp"
+                android:textAlignment="center"
+                android:padding="12dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/line" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/basketRv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/basketTv"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp"
+                tools:listitem="@layout/basket_layout"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <TextView
+                android:id="@+id/payableAmouttv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:text="Basket (8 Item)"
+                android:textColor="#343333"
+                android:textSize="16sp"
+                android:textAlignment="center"
+                android:padding="12dp"
+                android:textStyle="bold"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/basketRv" />
+
+            <View
+                android:id="@+id/line2"
+                android:layout_width="0dp"
+                android:layout_height="1.5dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/payableAmouttv"
+                android:background="#B5B5B5"/>
+            <TextView
+                android:id="@+id/paymentTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppinslight"
+                android:text ="Note:- You need to pay on the time of delivery."
+                android:textColor="#343333"
+                android:textSize="12sp"
+                android:textAlignment="center"
+                android:padding="12dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/line2"
+                />
+
+            <View
+                android:id="@+id/line3"
+                android:layout_width="0dp"
+                android:layout_height="1.5dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/paymentTv"
+                android:background="#B5B5B5"/>
+
+            <TextView
+                android:id="@+id/trackOrdertV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:text="Track your order"
+                android:textColor="#343333"
+                android:textSize="14sp"
+                android:textAlignment="center"
+                android:padding="12dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/line3" />
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/OrderedDot"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:backgroundTint="@color/colorPrimaryLight"
+                app:strokeWidth="0dp"
+                android:layout_marginEnd="6dp"
+                app:cardCornerRadius="50dp"
+                app:cardElevation="12dp"
+                android:outlineSpotShadowColor="@color/colorPrimaryDark"
+                app:layout_constraintTop_toBottomOf="@id/trackOrdertV"
+                app:layout_constraintStart_toStartOf="@id/trackOrdertV"
+                app:layout_constraintEnd_toEndOf="@id/trackOrdertV"
+                android:layout_marginTop="28dp"
+                />
+
+            <TextView
+                android:id="@+id/ordertv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:text="Ordered"
+                android:textColor="#343333"
+                android:textSize="12sp"
+                android:textAlignment="center"
+                android:padding="12dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/OrderedDot"
+                app:layout_constraintTop_toTopOf="@id/OrderedDot"
+                app:layout_constraintBottom_toBottomOf="@id/OrderedDot"/>
+            <TextView
+                android:id="@+id/ordertime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:text="Ordered"
+                android:textColor="#343333"
+                android:textAlignment="center"
+                android:textSize="8sp"
+                app:layout_constraintStart_toStartOf="@id/ordertv"
+                app:layout_constraintTop_toBottomOf="@id/ordertv"
+                app:layout_constraintEnd_toEndOf="@id/ordertv"/>
+          <View
+              android:id="@+id/orderline"
+              android:layout_width="2dp"
+              android:layout_height="50dp"
+              app:layout_constraintTop_toBottomOf="@id/OrderedDot"
+              app:layout_constraintStart_toStartOf="@id/OrderedDot"
+              app:layout_constraintEnd_toEndOf="@id/OrderedDot"
+              android:background="#B5B5B5"/>
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/ConfirmedDot"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:backgroundTint="#B9B9B9"
+                app:strokeWidth="0dp"
+                app:cardCornerRadius="50dp"
+                app:cardElevation="12dp"
+                app:layout_constraintTop_toBottomOf="@id/orderline"
+                app:layout_constraintStart_toStartOf="@id/orderline"
+                app:layout_constraintEnd_toEndOf="@id/orderline"
+                />
+
+            <TextView
+                android:id="@+id/confirmtv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:text="Confirmed"
+                android:textColor="#B5B5B5"
+                android:textSize="12sp"
+                android:textAlignment="center"
+                android:padding="12dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/ConfirmedDot"
+                app:layout_constraintTop_toTopOf="@id/ConfirmedDot"
+                app:layout_constraintBottom_toBottomOf="@id/ConfirmedDot"/>
+            <TextView
+                android:id="@+id/confirmtime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:text="Yet to Confirm"
+                android:textColor="#B5B5B5"
+                android:textAlignment="center"
+                android:textSize="8sp"
+                app:layout_constraintStart_toStartOf="@id/confirmtv"
+                app:layout_constraintTop_toBottomOf="@id/confirmtv"
+                app:layout_constraintEnd_toEndOf="@id/confirmtv"/>
+            <View
+                android:id="@+id/confimeline"
+                android:layout_width="2dp"
+                android:layout_height="50dp"
+                app:layout_constraintTop_toBottomOf="@id/ConfirmedDot"
+                app:layout_constraintStart_toStartOf="@id/ConfirmedDot"
+                app:layout_constraintEnd_toEndOf="@id/ConfirmedDot"
+                android:background="#B5B5B5"/>
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/ShippedDotDot"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:backgroundTint="#B9B9B9"
+                app:strokeWidth="0dp"
+                app:cardCornerRadius="50dp"
+                app:cardElevation="12dp"
+                app:layout_constraintTop_toBottomOf="@id/confimeline"
+                app:layout_constraintStart_toStartOf="@id/confimeline"
+                app:layout_constraintEnd_toEndOf="@id/confimeline"
+                />
+            <TextView
+                android:id="@+id/Shippedtv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:text="Shipped"
+                android:textColor="#B5B5B5"
+                android:textSize="12sp"
+                android:textAlignment="center"
+                android:padding="12dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/ShippedDotDot"
+                app:layout_constraintTop_toTopOf="@id/ShippedDotDot"
+                app:layout_constraintBottom_toBottomOf="@id/ShippedDotDot"/>
+            <TextView
+                android:id="@+id/shippetime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:text="Yet to Shipped"
+                android:textColor="#B5B5B5"
+                android:textAlignment="center"
+                android:textSize="8sp"
+                app:layout_constraintStart_toStartOf="@id/Shippedtv"
+                app:layout_constraintTop_toBottomOf="@id/Shippedtv"
+                app:layout_constraintEnd_toEndOf="@id/Shippedtv"/>
+            <View
+                android:id="@+id/delieverdline"
+                android:layout_width="2dp"
+                android:layout_height="50dp"
+                app:layout_constraintTop_toBottomOf="@id/ShippedDotDot"
+                app:layout_constraintStart_toStartOf="@id/ShippedDotDot"
+                app:layout_constraintEnd_toEndOf="@id/ShippedDotDot"
+                android:background="#B5B5B5"/>
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/DeliveredDot"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:backgroundTint="#B9B9B9"
+                app:strokeWidth="0dp"
+                app:cardCornerRadius="50dp"
+                app:cardElevation="12dp"
+                app:layout_constraintTop_toBottomOf="@id/delieverdline"
+                app:layout_constraintStart_toStartOf="@id/delieverdline"
+                app:layout_constraintEnd_toEndOf="@id/delieverdline"
+                />
+            <TextView
+                android:id="@+id/DeliveredTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:text="Delivered"
+                android:textColor="#B5B5B5"
+                android:textSize="12sp"
+                android:textAlignment="center"
+                android:padding="12dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/DeliveredDot"
+                app:layout_constraintTop_toTopOf="@id/DeliveredDot"
+                app:layout_constraintBottom_toBottomOf="@id/DeliveredDot"/>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

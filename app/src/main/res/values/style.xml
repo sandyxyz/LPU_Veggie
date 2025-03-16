@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="blueButtonStyle">
+        <item name="android:background">@drawable/yello_background</item>
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:textSize">12sp</item>
+
+    </style>
+    <style name="editText">
+        <item name="android:background">@drawable/white_background</item>
+        <item name="android:gravity">center</item>
+        <item name="singleLine">true</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/poppinslight</item>
+    </style>
+</resources>

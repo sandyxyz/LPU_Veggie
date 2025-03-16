@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#88B26A"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/errorImageView"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/error"
+        />
+    <TextView
+        android:id="@+id/errorTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="Network Error !"
+        android:textColor="@color/white"
+        android:fontFamily="@font/poppins"
+        app:layout_constraintTop_toBottomOf="@+id/errorImageView" />
+    <TextView
+        android:id="@+id/errormsgTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="Please check your internet connection."
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/errorTextView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
