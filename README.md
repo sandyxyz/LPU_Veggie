@@ -10,21 +10,21 @@ An Android application for browsing and purchasing products from LPU Veggie, wit
 + Firebase Services: Real-time data sync, authentication, and storage.
 
 # Key Components:
-Activity: Different screens like Login, Product Details, and Cart.
-Fragment: Reusable components like bottom navigation bar.
-RecyclerView: Efficient display of products, categories, and other lists.
-ViewModel: Holds UI-related data and handles lifecycle events.
-Firebase Realtime Database: Syncs data across devices in real-time.
++ Activity: Different screens like Login, Product Details, and Cart.
++ Fragment: Reusable components like bottom navigation bar.
++ RecyclerView: Efficient display of products, categories, and other lists.
++ ViewModel: Holds UI-related data and handles lifecycle events.
++ Firebase Realtime Database: Syncs data across devices in real-time.
 
 # Setup:
-Clone the repository.
-Open in Android Studio.
-Add Firebase configuration file (google-services.json).
-Add Firebase SDK dependencies in build.gradle.
-Run the app on your Android device.
++ Clone the repository.
++ Open in Android Studio.
++ Add Firebase configuration file (google-services.json).
++ Add Firebase SDK dependencies in build.gradle.
++ Run the app on your Android device.
 
 # Technologies:
-Firebase Authentication
-Firebase Realtime Database
-Firebase Storage
-Room Database
++ Firebase Authentication
++ Firebase Realtime Database
++ Firebase Storage
++ Room Database
